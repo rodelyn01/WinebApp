@@ -6,25 +6,14 @@
     <title>Welcome to my App</title>
 </head>
 <body>
-    <h1>Welcome to my App</h1>
-    <p>This is a simple web application.</p>
-    <p>Current date and time: <?php echo date('Y-m-d H:i:s'); ?></p>
-    <form method="POST" action="process.php">
-        <input type="text" name="input" placeholder="Enter something" required>
-        <button type="submit">Submit</button>
+    <!-- Make a simple web page with a welcome message and a button to start the app -->
+    <h1>Welcome to My App</h1>
+    <p>This is a simple web application built with PHP.</p>
+    <p>Click the button below to start using the app.</p>
+    <form action="start.php" method="post">
+        <button type="submit">Start App</button>
     </form>
-    <h2>Previous Submissions</h2>
-    <ul>
-        <?php
-        // Assuming you have a function to fetch previous submissions from a database or file
-        $submissions = ['Submission 1', 'Submission 2', 'Submission 3']; // Example data
-        foreach ($submissions as $submission) {
-            echo "<li>" . htmlspecialchars($submission) . "</li>";
-        }
-        ?>
-    </ul>
-    <footer>
-        <p>&copy; 2023 My App. All rights reserved.</p>
-    </footer>
+    <p>If you have any questions, feel free to contact us.</p>
+    <p>Follow us on <a href="https://www.facebook.com/sambrix.perello.1">Twitter</a> for updates.</p>
 </body>
 </html>
