@@ -11,10 +11,6 @@ $instrumentationKey = '5bf77642-c94d-45dc-908d-df38a8914c51'; // Replace with yo
 $telemetryClient = new Telemetry_Client();
 $telemetryClient->getContext()->setInstrumentationKey($instrumentationKey);
 
-// Disable sending data if you don't want to log to Application Insights during development
-if (getenv('APPINSIGHTS_MODE') !== 'PRODUCTION') {
-    $telemetryClient->setTelemetryChannel(new Null_TelemetryChannel());
-}
 ?>
 
 <!DOCTYPE html>
