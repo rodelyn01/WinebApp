@@ -15,15 +15,6 @@ $telemetryClient->getContext()->setInstrumentationKey($instrumentationKey);
 if (getenv('APPINSIGHTS_MODE') !== 'PRODUCTION') {
     $telemetryClient->setTelemetryChannel(new Null_TelemetryChannel());
 }
-
-$telemetryClient->trackRequest(
-    $_SERVER['REQUEST_METHOD'] . ' ' . $_SERVER['REQUEST_URI'],
-    $_SERVER['REQUEST_TIME_FLOAT'] * 1000, // Start time in milliseconds
-    microtime(true) * 1000 - $_SERVER['REQUEST_TIME_FLOAT'] * 1000, // Duration in milliseconds
-    200, // Response code (you can change this based on the actual response)
-    true // Success (you can change this based on the actual response)
-);
-
 ?>
 
 <!DOCTYPE html>
