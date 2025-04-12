@@ -1,18 +1,3 @@
-<?php
-
-require_once 'vendor/autoload.php';
-
-use Microsoft\ApplicationInsights\Telemetry_Client;
-use Microsoft\ApplicationInsights\Telemetry_Context;
-use Microsoft\ApplicationInsights\Channel\Null_TelemetryChannel;
-
-$instrumentationKey = '5bf77642-c94d-45dc-908d-df38a8914c51'; // Replace with your actual Instrumentation Key
-
-$telemetryClient = new Telemetry_Client();
-$telemetryClient->getContext()->setInstrumentationKey($instrumentationKey);
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
