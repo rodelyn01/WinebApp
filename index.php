@@ -1,31 +1,3 @@
-<?php
-
-require_once 'vendor/autoload.php';
-
-use Microsoft\ApplicationInsights\Telemetry_Client;
-use Microsoft\ApplicationInsights\Telemetry_Context;
-use Microsoft\ApplicationInsights\Channel\Null_TelemetryChannel;
-
-$instrumentationKey = '5bf77642-c94d-45dc-908d-df38a8914c51'; // Replace with your actual Instrumentation Key
-
-$telemetryClient = new Telemetry_Client();
-$telemetryClient->getContext()->setInstrumentationKey($instrumentationKey);
-
-// Disable sending data if you don't want to log to Application Insights during development
-if (getenv('APPINSIGHTS_MODE') !== 'PRODUCTION') {
-    $telemetryClient->setTelemetryChannel(new Null_TelemetryChannel());
-}
-
-$telemetryClient->trackRequest(
-    $_SERVER['REQUEST_METHOD'] . ' ' . $_SERVER['REQUEST_URI'],
-    $_SERVER['REQUEST_TIME_FLOAT'] * 1000, // Start time in milliseconds
-    microtime(true) * 1000 - $_SERVER['REQUEST_TIME_FLOAT'] * 1000,
-    200,
-    true
-);
-
-
-?>
 
 <!DOCTYPE html>
 <html lang="en">
