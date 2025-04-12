@@ -6,7 +6,7 @@ use Microsoft\ApplicationInsights\Telemetry_Client;
 use Microsoft\ApplicationInsights\Telemetry_Context;
 use Microsoft\ApplicationInsights\Channel\Null_TelemetryChannel;
 
-$instrumentationKey = 'YOUR_INSTRUMENTATION_KEY'; // Replace with your actual Instrumentation Key
+$instrumentationKey = '5bf77642-c94d-45dc-908d-df38a8914c51'; // Replace with your actual Instrumentation Key
 
 $telemetryClient = new Telemetry_Client();
 $telemetryClient->getContext()->setInstrumentationKey($instrumentationKey);
